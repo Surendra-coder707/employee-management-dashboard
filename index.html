@@ -1,0 +1,864 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Accessible Employee Management Dashboard for managing employee information.">
+
+    <title>Employee Management Dashboard</title>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         ACCESSIBILITY: SKIP LINK
+         Allows keyboard users to skip navigation
+    ====================================================== -->
+    <a href="#main-content" class="skip-link">
+        Skip to main content
+    </a>
+
+
+    <!-- =====================================================
+         HEADER
+    ====================================================== -->
+    <header class="site-header">
+
+        <div class="header-content">
+
+            <h1>Employee Management Dashboard</h1>
+
+            <p>
+                Manage employees, departments and employee records.
+            </p>
+
+        </div>
+
+    </header>
+
+
+    <!-- =====================================================
+         DASHBOARD LAYOUT
+    ====================================================== -->
+    <div class="dashboard-layout">
+
+
+        <!-- =================================================
+             SIDEBAR
+        ================================================== -->
+        <aside class="sidebar" aria-label="Dashboard sidebar">
+
+            <nav aria-label="Main navigation">
+
+                <h2>Navigation</h2>
+
+                <ul>
+
+                    <li>
+                        <a href="#dashboard" aria-current="page">
+                            Dashboard
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#employees">
+                            Employees
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#add-employee">
+                            Add Employee
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#reports">
+                            Reports
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#settings">
+                            Settings
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </aside>
+
+
+        <!-- =================================================
+             MAIN CONTENT
+        ================================================== -->
+        <main id="main-content" class="main-content">
+
+
+            <!-- =================================================
+                 STEP 3: DASHBOARD OVERVIEW
+            ================================================== -->
+            <section id="dashboard" aria-labelledby="dashboard-heading">
+
+                <header class="section-header">
+
+                    <h2 id="dashboard-heading">
+                        Dashboard Overview
+                    </h2>
+
+                    <p>
+                        A quick overview of employee information.
+                    </p>
+
+                </header>
+
+
+                <!-- Dashboard Statistics -->
+                <div class="dashboard-cards">
+
+                    <article class="dashboard-card">
+
+                        <h3>Total Employees</h3>
+
+                        <p>
+                            <strong>120</strong>
+                        </p>
+
+                        <p>
+                            Total employees registered in the organization.
+                        </p>
+
+                    </article>
+
+
+                    <article class="dashboard-card">
+
+                        <h3>Active Employees</h3>
+
+                        <p>
+                            <strong>105</strong>
+                        </p>
+
+                        <p>
+                            Employees currently working in the organization.
+                        </p>
+
+                    </article>
+
+
+                    <article class="dashboard-card">
+
+                        <h3>Departments</h3>
+
+                        <p>
+                            <strong>8</strong>
+                        </p>
+
+                        <p>
+                            Total departments currently available.
+                        </p>
+
+                    </article>
+
+
+                    <article class="dashboard-card">
+
+                        <h3>Pending Requests</h3>
+
+                        <p>
+                            <strong>7</strong>
+                        </p>
+
+                        <p>
+                            Employee requests waiting for review.
+                        </p>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 STEP 4: EMPLOYEE TABLE
+            ================================================== -->
+            <section id="employees" aria-labelledby="employees-heading">
+
+                <header class="section-header">
+
+                    <h2 id="employees-heading">
+                        Employee Records
+                    </h2>
+
+                    <p>
+                        View the employees currently registered in the system.
+                    </p>
+
+                </header>
+
+
+                <!-- Accessible Table -->
+                <div class="table-container">
+
+                    <table>
+
+                        <caption>
+                            List of registered employees
+                        </caption>
+
+                        <thead>
+
+                            <tr>
+
+                                <th scope="col">
+                                    Employee ID
+                                </th>
+
+                                <th scope="col">
+                                    Name
+                                </th>
+
+                                <th scope="col">
+                                    Email
+                                </th>
+
+                                <th scope="col">
+                                    Department
+                                </th>
+
+                                <th scope="col">
+                                    Position
+                                </th>
+
+                                <th scope="col">
+                                    Status
+                                </th>
+
+                                <th scope="col">
+                                    Actions
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>
+                                    EMP001
+                                </td>
+
+                                <td>
+                                    Rahul Sharma
+                                </td>
+
+                                <td>
+                                    rahul@example.com
+                                </td>
+
+                                <td>
+                                    IT
+                                </td>
+
+                                <td>
+                                    Software Developer
+                                </td>
+
+                                <td>
+                                    Active
+                                </td>
+
+                                <td>
+
+                                    <button type="button">
+                                        View
+                                    </button>
+
+                                    <button type="button">
+                                        Edit
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    EMP002
+                                </td>
+
+                                <td>
+                                    Priya Verma
+                                </td>
+
+                                <td>
+                                    priya@example.com
+                                </td>
+
+                                <td>
+                                    Human Resources
+                                </td>
+
+                                <td>
+                                    HR Executive
+                                </td>
+
+                                <td>
+                                    Active
+                                </td>
+
+                                <td>
+
+                                    <button type="button">
+                                        View
+                                    </button>
+
+                                    <button type="button">
+                                        Edit
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    EMP003
+                                </td>
+
+                                <td>
+                                    Amit Singh
+                                </td>
+
+                                <td>
+                                    amit@example.com
+                                </td>
+
+                                <td>
+                                    Finance
+                                </td>
+
+                                <td>
+                                    Accountant
+                                </td>
+
+                                <td>
+                                    Inactive
+                                </td>
+
+                                <td>
+
+                                    <button type="button">
+                                        View
+                                    </button>
+
+                                    <button type="button">
+                                        Edit
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    EMP004
+                                </td>
+
+                                <td>
+                                    Neha Gupta
+                                </td>
+
+                                <td>
+                                    neha@example.com
+                                </td>
+
+                                <td>
+                                    Marketing
+                                </td>
+
+                                <td>
+                                    Marketing Executive
+                                </td>
+
+                                <td>
+                                    Active
+                                </td>
+
+                                <td>
+
+                                    <button type="button">
+                                        View
+                                    </button>
+
+                                    <button type="button">
+                                        Edit
+                                    </button>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 STEP 5: ADD EMPLOYEE FORM
+            ================================================== -->
+            <section id="add-employee" aria-labelledby="add-employee-heading">
+
+                <header class="section-header">
+
+                    <h2 id="add-employee-heading">
+                        Add New Employee
+                    </h2>
+
+                    <p>
+                        Enter employee information using the form below.
+                    </p>
+
+                </header>
+
+
+                <form id="employee-form">
+
+
+                    <!-- Full Name -->
+                    <div class="form-group">
+
+                        <label for="employee-name">
+                            Full Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="employee-name"
+                            name="employee_name"
+                            autocomplete="name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Email -->
+                    <div class="form-group">
+
+                        <label for="employee-email">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="employee-email"
+                            name="employee_email"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Employee ID -->
+                    <div class="form-group">
+
+                        <label for="employee-id">
+                            Employee ID
+                        </label>
+
+                        <input
+                            type="text"
+                            id="employee-id"
+                            name="employee_id"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Department -->
+                    <div class="form-group">
+
+                        <label for="department">
+                            Department
+                        </label>
+
+                        <select
+                            id="department"
+                            name="department"
+                            required
+                        >
+
+                            <option value="">
+                                Select department
+                            </option>
+
+                            <option value="it">
+                                IT
+                            </option>
+
+                            <option value="hr">
+                                Human Resources
+                            </option>
+
+                            <option value="finance">
+                                Finance
+                            </option>
+
+                            <option value="marketing">
+                                Marketing
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Position -->
+                    <div class="form-group">
+
+                        <label for="position">
+                            Position
+                        </label>
+
+                        <input
+                            type="text"
+                            id="position"
+                            name="position"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Joining Date -->
+                    <div class="form-group">
+
+                        <label for="joining-date">
+                            Joining Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="joining-date"
+                            name="joining_date"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Employee Status -->
+                    <fieldset>
+
+                        <legend>
+                            Employee Status
+                        </legend>
+
+                        <div>
+
+                            <input
+                                type="radio"
+                                id="status-active"
+                                name="status"
+                                value="active"
+                                checked
+                            >
+
+                            <label for="status-active">
+                                Active
+                            </label>
+
+                        </div>
+
+
+                        <div>
+
+                            <input
+                                type="radio"
+                                id="status-inactive"
+                                name="status"
+                                value="inactive"
+                            >
+
+                            <label for="status-inactive">
+                                Inactive
+                            </label>
+
+                        </div>
+
+                    </fieldset>
+
+
+                    <!-- Submit -->
+                    <button type="submit">
+                        Add Employee
+                    </button>
+
+                    <!-- Reset -->
+                    <button type="reset">
+                        Clear Form
+                    </button>
+
+                </form>
+
+            </section>
+
+
+            <!-- =================================================
+                 STEP 6: MODAL DIALOG
+            ================================================== -->
+            <section aria-labelledby="employee-details-heading">
+
+                <h2 id="employee-details-heading">
+                    Employee Details
+                </h2>
+
+                <p>
+                    Select an employee from the table to view detailed information.
+                </p>
+
+
+                <!-- Modal Trigger -->
+                <button
+                    type="button"
+                    id="open-modal"
+                    aria-haspopup="dialog"
+                    aria-controls="employee-modal"
+                >
+                    View Employee Details
+                </button>
+
+
+                <!-- Accessible Dialog -->
+                <dialog
+                    id="employee-modal"
+                    aria-labelledby="modal-title"
+                    aria-describedby="modal-description"
+                >
+
+                    <header>
+
+                        <h3 id="modal-title">
+                            Employee Details
+                        </h3>
+
+                    </header>
+
+
+                    <div id="modal-description">
+
+                        <p>
+                            Employee information will be displayed here.
+                        </p>
+
+                        <dl>
+
+                            <dt>
+                                Employee ID
+                            </dt>
+
+                            <dd>
+                                EMP001
+                            </dd>
+
+
+                            <dt>
+                                Name
+                            </dt>
+
+                            <dd>
+                                Rahul Sharma
+                            </dd>
+
+
+                            <dt>
+                                Department
+                            </dt>
+
+                            <dd>
+                                IT
+                            </dd>
+
+
+                            <dt>
+                                Position
+                            </dt>
+
+                            <dd>
+                                Software Developer
+                            </dd>
+
+                        </dl>
+
+                    </div>
+
+
+                    <form method="dialog">
+
+                        <button type="submit">
+                            Close
+                        </button>
+
+                    </form>
+
+                </dialog>
+
+            </section>
+
+
+            <!-- =================================================
+                 STEP 7: REPORTS
+            ================================================== -->
+            <section id="reports" aria-labelledby="reports-heading">
+
+                <header class="section-header">
+
+                    <h2 id="reports-heading">
+                        Reports
+                    </h2>
+
+                    <p>
+                        Employee reports and performance information.
+                    </p>
+
+                </header>
+
+
+                <article>
+
+                    <h3>Employee Report</h3>
+
+                    <p>
+                        The employee report section can be used to
+                        review employee statistics and records.
+                    </p>
+
+                    <button type="button">
+                        Generate Report
+                    </button>
+
+                </article>
+
+            </section>
+
+
+            <!-- =================================================
+                 SETTINGS
+            ================================================== -->
+            <section id="settings" aria-labelledby="settings-heading">
+
+                <header class="section-header">
+
+                    <h2 id="settings-heading">
+                        Settings
+                    </h2>
+
+                    <p>
+                        Manage dashboard preferences and settings.
+                    </p>
+
+                </header>
+
+
+                <form id="settings-form">
+
+                    <fieldset>
+
+                        <legend>
+                            Dashboard Preferences
+                        </legend>
+
+
+                        <div>
+
+                            <input
+                                type="checkbox"
+                                id="email-notifications"
+                                name="email_notifications"
+                            >
+
+                            <label for="email-notifications">
+                                Enable email notifications
+                            </label>
+
+                        </div>
+
+
+                        <div>
+
+                            <input
+                                type="checkbox"
+                                id="system-notifications"
+                                name="system_notifications"
+                            >
+
+                            <label for="system-notifications">
+                                Enable system notifications
+                            </label>
+
+                        </div>
+
+                    </fieldset>
+
+
+                    <button type="submit">
+                        Save Settings
+                    </button>
+
+                </form>
+
+            </section>
+
+
+        </main>
+
+    </div>
+
+
+    <!-- =====================================================
+         FOOTER
+    ====================================================== -->
+    <footer class="site-footer">
+
+        <p>
+            &copy; 2026 Employee Management Dashboard.
+            All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- Main JavaScript -->
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
+

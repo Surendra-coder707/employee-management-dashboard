@@ -1,0 +1,1313 @@
+
+/* =========================================================
+   EMPLOYEE MANAGEMENT DASHBOARD
+   PREMIUM GOLD + WHITE DESIGN
+   ========================================================= */
+
+
+/* =========================================================
+   1. COLOR SYSTEM
+   ========================================================= */
+
+:root {
+    --gold: #c9a227;
+    --gold-light: #e6c766;
+    --gold-dark: #a78312;
+
+    --navy: #101828;
+    --navy-2: #172235;
+    --navy-3: #243047;
+
+    --white: #ffffff;
+    --cream: #faf9f6;
+    --soft: #f4f3ef;
+
+    --text: #172033;
+    --text-dark: #101828;
+    --text-muted: #667085;
+
+    --border: #e5e2d8;
+
+    --green: #15803d;
+    --green-bg: #dcfce7;
+
+    --red: #b42318;
+    --red-bg: #fee4e2;
+
+    --shadow-sm: 0 2px 10px rgba(16, 24, 40, 0.06);
+    --shadow-md: 0 10px 30px rgba(16, 24, 40, 0.10);
+    --shadow-lg: 0 20px 55px rgba(16, 24, 40, 0.18);
+
+    --radius: 14px;
+
+    --transition: 0.25s ease;
+}
+
+
+/* =========================================================
+   2. RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #faf9f6 0%,
+            #ffffff 50%,
+            #f7f5ef 100%
+        );
+
+    color: var(--text);
+
+    line-height: 1.6;
+
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   3. SKIP LINK
+   ========================================================= */
+
+.skip-link {
+    position: fixed;
+
+    top: -100px;
+    left: 20px;
+
+    z-index: 9999;
+
+    padding: 12px 18px;
+
+    background: var(--gold);
+
+    color: var(--navy);
+
+    border-radius: 8px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    box-shadow: var(--shadow-md);
+}
+
+
+.skip-link:focus {
+    top: 20px;
+}
+
+
+/* =========================================================
+   4. KEYBOARD FOCUS
+   ========================================================= */
+
+:focus-visible {
+    outline: 3px solid var(--gold);
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   5. HEADER
+   ========================================================= */
+
+.site-header {
+    position: relative;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--navy),
+            var(--navy-2)
+        );
+
+    color: var(--white);
+
+    padding: 34px 45px;
+
+    border-bottom: 1px solid rgba(201, 162, 39, 0.5);
+
+    box-shadow: 0 8px 25px rgba(16, 24, 40, 0.14);
+}
+
+
+.site-header::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -2px;
+
+    width: 180px;
+    height: 3px;
+
+    background: var(--gold);
+}
+
+
+.header-content {
+    max-width: 1500px;
+
+    margin: auto;
+}
+
+
+.site-header h1 {
+    font-size: 31px;
+
+    font-weight: 700;
+
+    letter-spacing: -0.5px;
+
+    margin-bottom: 5px;
+}
+
+
+.site-header p {
+    color: #d9dee8;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   6. MAIN DASHBOARD LAYOUT
+   ========================================================= */
+
+.dashboard-layout {
+    display: grid;
+
+    grid-template-columns: 255px 1fr;
+
+    min-height: calc(100vh - 150px);
+}
+
+
+/* =========================================================
+   7. SIDEBAR
+   ========================================================= */
+
+.sidebar {
+    background:
+        linear-gradient(
+            180deg,
+            var(--navy),
+            #0d1420
+        );
+
+    padding: 32px 20px;
+
+    border-right: 1px solid rgba(201, 162, 39, 0.25);
+
+    box-shadow: 8px 0 25px rgba(16, 24, 40, 0.08);
+}
+
+
+.sidebar nav h2 {
+    color: var(--gold-light);
+
+    font-size: 12px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.8px;
+
+    padding: 0 13px;
+
+    margin-bottom: 18px;
+}
+
+
+.sidebar ul {
+    list-style: none;
+}
+
+
+.sidebar li {
+    margin-bottom: 7px;
+}
+
+
+.sidebar a {
+    display: flex;
+
+    align-items: center;
+
+    min-height: 46px;
+
+    padding: 11px 14px;
+
+    border-radius: 9px;
+
+    color: #d7dce5;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    border: 1px solid transparent;
+
+    transition: var(--transition);
+}
+
+
+.sidebar a:hover {
+    color: var(--gold-light);
+
+    background: rgba(201, 162, 39, 0.08);
+
+    border-color: rgba(201, 162, 39, 0.22);
+
+    transform: translateX(3px);
+}
+
+
+.sidebar a[aria-current="page"] {
+    color: var(--navy);
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold-light),
+            var(--gold)
+        );
+
+    border-color: var(--gold-light);
+
+    box-shadow:
+        0 6px 18px rgba(201, 162, 39, 0.22);
+}
+
+
+/* =========================================================
+   8. MAIN CONTENT
+   ========================================================= */
+
+.main-content {
+    width: 100%;
+
+    max-width: 1500px;
+
+    margin: auto;
+
+    padding: 42px;
+}
+
+
+.main-content > section {
+    background: rgba(255, 255, 255, 0.96);
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    padding: 30px;
+
+    margin-bottom: 28px;
+
+    box-shadow: var(--shadow-sm);
+
+    transition: var(--transition);
+}
+
+
+.main-content > section:hover {
+    box-shadow: var(--shadow-md);
+}
+
+
+/* =========================================================
+   9. SECTION HEADINGS
+   ========================================================= */
+
+.section-header {
+    position: relative;
+
+    margin-bottom: 25px;
+
+    padding-bottom: 16px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+.section-header::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: -1px;
+
+    width: 65px;
+    height: 2px;
+
+    background: var(--gold);
+}
+
+
+.section-header h2 {
+    color: var(--navy);
+
+    font-size: 24px;
+
+    font-weight: 700;
+
+    margin-bottom: 4px;
+}
+
+
+.section-header p {
+    color: var(--text-muted);
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   10. DASHBOARD CARDS
+   ========================================================= */
+
+.dashboard-cards {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+
+.dashboard-card {
+    position: relative;
+
+    overflow: hidden;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 13px;
+
+    padding: 24px;
+
+    box-shadow: var(--shadow-sm);
+
+    transition: var(--transition);
+}
+
+
+.dashboard-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 3px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--gold-dark),
+            var(--gold-light)
+        );
+}
+
+
+.dashboard-card:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(201, 162, 39, 0.55);
+
+    box-shadow: var(--shadow-md);
+}
+
+
+.dashboard-card h3 {
+    color: var(--text-muted);
+
+    font-size: 13px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+
+    margin-bottom: 14px;
+}
+
+
+.dashboard-card strong {
+    display: block;
+
+    color: var(--navy);
+
+    font-size: 35px;
+
+    line-height: 1;
+
+    font-weight: 700;
+
+    margin-bottom: 12px;
+}
+
+
+.dashboard-card p:last-child {
+    color: var(--text-muted);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   11. TABLE
+   ========================================================= */
+
+.table-container {
+    width: 100%;
+
+    overflow-x: auto;
+
+    border: 1px solid var(--border);
+
+    border-radius: 11px;
+
+    background: var(--white);
+}
+
+
+table {
+    width: 100%;
+
+    min-width: 900px;
+
+    border-collapse: collapse;
+}
+
+
+caption {
+    text-align: left;
+
+    padding: 16px 18px;
+
+    color: var(--navy);
+
+    background: var(--cream);
+
+    border-bottom: 1px solid var(--border);
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+thead {
+    background:
+        linear-gradient(
+            135deg,
+            var(--navy),
+            var(--navy-2)
+        );
+
+    color: var(--white);
+}
+
+
+th {
+    padding: 15px 16px;
+
+    text-align: left;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.2px;
+
+    white-space: nowrap;
+
+    border-bottom: 2px solid var(--gold);
+}
+
+
+td {
+    padding: 15px 16px;
+
+    color: var(--text);
+
+    font-size: 13px;
+
+    border-bottom: 1px solid var(--border);
+
+    vertical-align: middle;
+}
+
+
+tbody tr {
+    transition: var(--transition);
+}
+
+
+tbody tr:nth-child(even) {
+    background: #fcfbf8;
+}
+
+
+tbody tr:hover {
+    background: #fffaf0;
+}
+
+
+/* =========================================================
+   12. TABLE ACTION BUTTONS
+   ========================================================= */
+
+td button {
+    padding: 7px 12px;
+
+    margin-right: 5px;
+
+    border: 1px solid var(--gold);
+
+    border-radius: 7px;
+
+    background: var(--white);
+
+    color: var(--navy);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+
+td button:hover {
+    background: var(--gold);
+
+    color: var(--navy);
+
+    box-shadow: 0 4px 10px rgba(201, 162, 39, 0.20);
+
+    transform: translateY(-1px);
+}
+
+
+td button:last-child {
+    background: var(--navy);
+
+    color: var(--white);
+
+    border-color: var(--navy);
+}
+
+
+td button:last-child:hover {
+    background: var(--gold);
+
+    color: var(--navy);
+
+    border-color: var(--gold);
+}
+
+
+/* =========================================================
+   13. FORMS
+   ========================================================= */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+
+label {
+    display: block;
+
+    color: var(--text-dark);
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    margin-bottom: 7px;
+}
+
+
+input,
+select {
+    width: 100%;
+
+    min-height: 45px;
+
+    padding: 11px 13px;
+
+    border: 1px solid #cfd3da;
+
+    border-radius: 8px;
+
+    background: var(--white);
+
+    color: var(--text-dark);
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    transition: var(--transition);
+}
+
+
+input::placeholder {
+    color: #98a2b3;
+}
+
+
+input:hover,
+select:hover {
+    border-color: #b9a66a;
+}
+
+
+input:focus,
+select:focus {
+    border-color: var(--gold);
+
+    box-shadow:
+        0 0 0 3px rgba(201, 162, 39, 0.14);
+
+    outline: none;
+}
+
+
+/* =========================================================
+   14. FIELDSET
+   ========================================================= */
+
+fieldset {
+    margin: 25px 0;
+
+    padding: 20px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 10px;
+
+    background: #fffefa;
+}
+
+
+legend {
+    padding: 0 8px;
+
+    color: var(--navy);
+
+    font-size: 14px;
+
+    font-weight: 700;
+}
+
+
+fieldset div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    margin: 10px 0;
+}
+
+
+fieldset input[type="radio"],
+fieldset input[type="checkbox"] {
+    width: 17px;
+
+    min-height: 17px;
+
+    accent-color: var(--gold);
+}
+
+
+fieldset label {
+    margin: 0;
+
+    font-weight: 500;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   15. FORM BUTTONS
+   ========================================================= */
+
+form > button {
+    min-height: 44px;
+
+    padding: 10px 20px;
+
+    margin-right: 8px;
+
+    border: 1px solid var(--gold);
+
+    border-radius: 8px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold-light),
+            var(--gold)
+        );
+
+    color: var(--navy);
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+
+    box-shadow:
+        0 4px 12px rgba(201, 162, 39, 0.16);
+}
+
+
+form > button:hover {
+    background:
+        linear-gradient(
+            135deg,
+            var(--gold),
+            var(--gold-dark)
+        );
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 7px 18px rgba(201, 162, 39, 0.25);
+}
+
+
+form > button[type="reset"] {
+    background: var(--white);
+
+    color: var(--text-muted);
+
+    border-color: #cfd3da;
+
+    box-shadow: none;
+}
+
+
+form > button[type="reset"]:hover {
+    background: #f8f8f8;
+
+    color: var(--text);
+}
+
+
+/* =========================================================
+   16. REPORT SECTION
+   ========================================================= */
+
+#reports article {
+    padding: 23px;
+
+    background: linear-gradient(
+        135deg,
+        #fffdf7,
+        #ffffff
+    );
+
+    border: 1px solid var(--border);
+
+    border-left: 4px solid var(--gold);
+
+    border-radius: 10px;
+}
+
+
+#reports article h3 {
+    color: var(--navy);
+
+    font-size: 18px;
+
+    margin-bottom: 7px;
+}
+
+
+#reports article p {
+    color: var(--text-muted);
+
+    font-size: 14px;
+
+    margin-bottom: 18px;
+}
+
+
+#reports article button {
+    padding: 11px 19px;
+
+    border: 1px solid var(--gold);
+
+    border-radius: 8px;
+
+    background: var(--navy);
+
+    color: var(--white);
+
+    font-family: inherit;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+
+#reports article button:hover {
+    background: var(--gold);
+
+    color: var(--navy);
+}
+
+
+/* =========================================================
+   17. MODAL
+   ========================================================= */
+
+dialog {
+    width: min(560px, calc(100% - 30px));
+
+    max-height: 85vh;
+
+    padding: 0;
+
+    border: none;
+
+    border-radius: 15px;
+
+    background: var(--white);
+
+    color: var(--text);
+
+    box-shadow: var(--shadow-lg);
+}
+
+
+dialog::backdrop {
+    background: rgba(10, 15, 25, 0.70);
+
+    backdrop-filter: blur(4px);
+}
+
+
+dialog header {
+    padding: 22px 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--navy),
+            var(--navy-2)
+        );
+
+    color: var(--white);
+
+    border-bottom: 3px solid var(--gold);
+}
+
+
+dialog h3 {
+    font-size: 21px;
+}
+
+
+#modal-description {
+    padding: 25px;
+}
+
+
+#modal-description p {
+    color: var(--text-muted);
+
+    font-size: 14px;
+
+    margin-bottom: 18px;
+}
+
+
+dl {
+    display: grid;
+
+    grid-template-columns: 150px 1fr;
+
+    border: 1px solid var(--border);
+
+    border-radius: 9px;
+
+    overflow: hidden;
+}
+
+
+dt,
+dd {
+    padding: 12px 14px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+
+dt {
+    background: var(--cream);
+
+    color: var(--navy);
+
+    font-weight: 700;
+}
+
+
+dd {
+    color: var(--text);
+}
+
+
+dialog form {
+    padding: 0 25px 25px;
+}
+
+
+dialog form button {
+    width: 100%;
+
+    min-height: 43px;
+
+    border: 1px solid var(--gold);
+
+    border-radius: 8px;
+
+    background: var(--gold);
+
+    color: var(--navy);
+
+    font-family: inherit;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition: var(--transition);
+}
+
+
+dialog form button:hover {
+    background: var(--gold-dark);
+
+    color: var(--white);
+}
+
+
+/* =========================================================
+   18. FOOTER
+   ========================================================= */
+
+.site-footer {
+    padding: 24px;
+
+    background: var(--navy);
+
+    color: #d9dee8;
+
+    text-align: center;
+
+    border-top: 2px solid var(--gold);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   19. SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+    width: 9px;
+
+    height: 9px;
+}
+
+
+::-webkit-scrollbar-track {
+    background: #eeeae0;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: #b8a66a;
+
+    border-radius: 10px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gold-dark);
+}
+
+
+/* =========================================================
+   20. TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    .dashboard-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    .dashboard-layout {
+        grid-template-columns: 225px 1fr;
+    }
+
+
+    .main-content {
+        padding: 30px;
+    }
+
+}
+
+
+/* =========================================================
+   21. MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .site-header {
+        padding: 26px 20px;
+    }
+
+
+    .site-header h1 {
+        font-size: 25px;
+    }
+
+
+    .dashboard-layout {
+        display: block;
+    }
+
+
+    .sidebar {
+        padding: 18px;
+
+        border-right: none;
+
+        border-bottom: 1px solid rgba(201, 162, 39, 0.25);
+    }
+
+
+    .sidebar ul {
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        gap: 8px;
+    }
+
+
+    .sidebar li {
+        margin: 0;
+    }
+
+
+    .main-content {
+        padding: 20px;
+    }
+
+
+    .main-content > section {
+        padding: 22px;
+    }
+
+
+    .dashboard-cards {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================================
+   22. SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .site-header h1 {
+        font-size: 21px;
+    }
+
+
+    .site-header p {
+        font-size: 13px;
+    }
+
+
+    .sidebar ul {
+        grid-template-columns: 1fr;
+    }
+
+
+    .main-content {
+        padding: 12px;
+    }
+
+
+    .main-content > section {
+        padding: 18px;
+    }
+
+
+    .section-header h2 {
+        font-size: 20px;
+    }
+
+
+    .dashboard-card strong {
+        font-size: 30px;
+    }
+
+
+    form > button {
+        width: 100%;
+
+        margin: 5px 0;
+    }
+
+
+    dl {
+        grid-template-columns: 1fr;
+    }
+
+
+    dt {
+        border-bottom: none;
+    }
+
+}
+
+
+/* =========================================================
+   23. REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+
+        transition: none !important;
+
+        animation: none !important;
+    }
+
+}
+/* ================================
+   VIEW EMPLOYEE DETAILS BUTTON
+================================ */
+
+#open-modal {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 12px 22px;
+    min-height: 44px;
+
+    background: linear-gradient(135deg, #c9a227, #e6c766);
+    color: #101828;
+
+    border: 1px solid #a78312;
+    border-radius: 10px;
+
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 14px rgba(201, 162, 39, 0.22),
+        inset 0 1px 0 rgba(255, 255, 255, 0.45);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+/* Hover */
+#open-modal:hover {
+    background: linear-gradient(135deg, #e6c766, #c9a227);
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 20px rgba(201, 162, 39, 0.32),
+        inset 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+/* Click */
+#open-modal:active {
+    transform: translateY(0);
+    box-shadow:
+        0 3px 8px rgba(201, 162, 39, 0.22);
+}
+
+/* Keyboard accessibility */
+#open-modal:focus-visible {
+    outline: 3px solid rgba(201, 162, 39, 0.35);
+    outline-offset: 3px;
+}
+
+/* Disabled */
+#open-modal:disabled {
+    background: #e5e7eb;
+    color: #6b7280;
+    border-color: #d1d5db;
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
