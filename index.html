@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,8 +6,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-        content="Accessible Employee Management Dashboard for managing employee information.">
+    <meta name="description" content="Accessible Employee Management Dashboard for managing employee information.">
 
     <title>Employee Management Dashboard</title>
 
@@ -32,13 +30,13 @@
     ====================================================== -->
     <header class="site-header">
 
-        <div class="header-content">
+        <div class="page-intro">
 
             <h1>Employee Management Dashboard</h1>
 
-            <p>
-                Manage employees, departments and employee records.
-            </p>
+            <p>Manage employees, departments and employee records.</p>
+
+            
 
         </div>
 
@@ -193,6 +191,31 @@
             <!-- =================================================
                  STEP 4: EMPLOYEE TABLE
             ================================================== -->
+            <div class="employee-search">
+                <label for="employee-search">Search Employees</label>
+                <input type="search" id="employee-search" placeholder="Search by name, email or company...">
+            </div>
+            <div id="loading-message" class="loading-message" aria-live="polite">
+                Loading employees...
+            </div>
+
+          <div id="error-message" class="error-message" role="alert" hidden>
+    <strong>Unable to load employee data.</strong>
+    <button type="button" id="retry-button">
+        Try Again
+    </button>
+</div>
+            <div class="employee-sort">
+                <label for="employee-sort">Sort Employees</label>
+
+                <select id="employee-sort">
+                    <option value="default">Default</option>
+                    <option value="name-asc">Name: A to Z</option>
+                    <option value="name-desc">Name: Z to A</option>
+                    <option value="id-asc">ID: Low to High</option>
+                    <option value="id-desc">ID: High to Low</option>
+                </select>
+            </div>
             <section id="employees" aria-labelledby="employees-heading">
 
                 <header class="section-header">
@@ -206,6 +229,23 @@
                     </p>
 
                 </header>
+                <div class="employee-filter">
+                    <label for="company-filter">Filter by Company</label>
+
+                    <select id="company-filter">
+                        <option value="all">All Companies</option>
+                        <option value="Romaguera-Crona">Romaguera-Crona</option>
+                        <option value="Deckow-Crist">Deckow-Crist</option>
+                        <option value="Romaguera-Jacobson">Romaguera-Jacobson</option>
+                        <option value="Robel-Corkery">Robel-Corkery</option>
+                        <option value="Keebler LLC">Keebler LLC</option>
+                        <option value="Considine-Lockman">Considine-Lockman</option>
+                        <option value="Johns Group">Johns Group</option>
+                        <option value="Abernathy Group">Abernathy Group</option>
+                        <option value="Yost and Sons">Yost and Sons</option>
+                        <option value="Hoeger LLC">Hoeger LLC</option>
+                    </select>
+                </div>
 
 
                 <!-- Accessible Table -->
@@ -254,8 +294,7 @@
                         </thead>
 
 
-                        <tbody>
-
+                        <tbody id="employee-table-body">
                             <tr>
 
                                 <td>
@@ -426,7 +465,7 @@
                 </div>
 
             </section>
-
+            </tbody>
 
             <!-- =================================================
                  STEP 5: ADD EMPLOYEE FORM
@@ -456,13 +495,7 @@
                             Full Name
                         </label>
 
-                        <input
-                            type="text"
-                            id="employee-name"
-                            name="employee_name"
-                            autocomplete="name"
-                            required
-                        >
+                        <input type="text" id="employee-name" name="employee_name" autocomplete="name" required>
 
                     </div>
 
@@ -474,13 +507,7 @@
                             Email Address
                         </label>
 
-                        <input
-                            type="email"
-                            id="employee-email"
-                            name="employee_email"
-                            autocomplete="email"
-                            required
-                        >
+                        <input type="email" id="employee-email" name="employee_email" autocomplete="email" required>
 
                     </div>
 
@@ -492,12 +519,7 @@
                             Employee ID
                         </label>
 
-                        <input
-                            type="text"
-                            id="employee-id"
-                            name="employee_id"
-                            required
-                        >
+                        <input type="text" id="employee-id" name="employee_id" required>
 
                     </div>
 
@@ -509,11 +531,7 @@
                             Department
                         </label>
 
-                        <select
-                            id="department"
-                            name="department"
-                            required
-                        >
+                        <select id="department" name="department" required>
 
                             <option value="">
                                 Select department
@@ -547,12 +565,7 @@
                             Position
                         </label>
 
-                        <input
-                            type="text"
-                            id="position"
-                            name="position"
-                            required
-                        >
+                        <input type="text" id="position" name="position" required>
 
                     </div>
 
@@ -564,12 +577,7 @@
                             Joining Date
                         </label>
 
-                        <input
-                            type="date"
-                            id="joining-date"
-                            name="joining_date"
-                            required
-                        >
+                        <input type="date" id="joining-date" name="joining_date" required>
 
                     </div>
 
@@ -583,13 +591,7 @@
 
                         <div>
 
-                            <input
-                                type="radio"
-                                id="status-active"
-                                name="status"
-                                value="active"
-                                checked
-                            >
+                            <input type="radio" id="status-active" name="status" value="active" checked>
 
                             <label for="status-active">
                                 Active
@@ -600,12 +602,7 @@
 
                         <div>
 
-                            <input
-                                type="radio"
-                                id="status-inactive"
-                                name="status"
-                                value="inactive"
-                            >
+                            <input type="radio" id="status-inactive" name="status" value="inactive">
 
                             <label for="status-inactive">
                                 Inactive
@@ -646,22 +643,13 @@
 
 
                 <!-- Modal Trigger -->
-                <button
-                    type="button"
-                    id="open-modal"
-                    aria-haspopup="dialog"
-                    aria-controls="employee-modal"
-                >
+                <button type="button" id="open-modal" aria-haspopup="dialog" aria-controls="employee-modal">
                     View Employee Details
                 </button>
 
 
                 <!-- Accessible Dialog -->
-                <dialog
-                    id="employee-modal"
-                    aria-labelledby="modal-title"
-                    aria-describedby="modal-description"
-                >
+                <dialog id="employee-modal" aria-labelledby="modal-title" aria-describedby="modal-description">
 
                     <header>
 
@@ -798,11 +786,7 @@
 
                         <div>
 
-                            <input
-                                type="checkbox"
-                                id="email-notifications"
-                                name="email_notifications"
-                            >
+                            <input type="checkbox" id="email-notifications" name="email_notifications">
 
                             <label for="email-notifications">
                                 Enable email notifications
@@ -813,11 +797,7 @@
 
                         <div>
 
-                            <input
-                                type="checkbox"
-                                id="system-notifications"
-                                name="system_notifications"
-                            >
+                            <input type="checkbox" id="system-notifications" name="system_notifications">
 
                             <label for="system-notifications">
                                 Enable system notifications
@@ -857,8 +837,8 @@
 
     <!-- Main JavaScript -->
     <script src="js/script.js"></script>
-
+    <script src="js/api.js"></script>
+    <script src="js/app.js"></script>
 </body>
 
 </html>
-

@@ -139,14 +139,12 @@ html {
 
 
 body {
-    body {
-        overflow-x: hidden;
-    }
+    overflow-x: hidden;
 
     font-family: "Poppins",
-    "Segoe UI",
-    Arial,
-    sans-serif;
+        "Segoe UI",
+        Arial,
+        sans-serif;
 
     background: linear-gradient(135deg,
         #faf9f6 0%,
@@ -159,6 +157,7 @@ body {
 
     min-height: 100vh;
 }
+
 
 
 /* =========================================================
@@ -212,9 +211,11 @@ body {
 .site-header {
     position: relative;
 
-    background: var(--cream
-            var(--navy),
-            var(--navy-2));
+    background: linear-gradient(
+    135deg,
+    var(--navy),
+    var(--navy-2)
+);
 
     color: var(--white);
 
@@ -403,7 +404,7 @@ body {
 
     border: 1px solid var(--border);
 
-    border-radius: var(--radius);
+    border-radius: var(--radius-lg);
 
     padding: 30px;
 
@@ -1447,4 +1448,132 @@ dialog form button:hover {
         cursor: not-allowed;
         box-shadow: none;
         transform: none;
+    }/* ==========================================
+   LOADING & ERROR MESSAGES
+   ========================================== */
+
+.loading-message {
+    padding: 20px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--gold-dark);
+    background: var(--glass-bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    margin: 16px 0;
+}
+
+.error-message {
+    padding: 16px 20px;
+    margin: 16px 0;
+    border: 1px solid var(--red);
+    border-radius: var(--radius-md);
+    background: var(--red-bg);
+    color: var(--red);
+    font-weight: 600;
+}   
+/* ==========================================
+   PAGE INTRO / TOP TEXT
+   ========================================== */
+
+.page-intro {
+    margin-bottom: 25px;
+}
+
+.page-intro h1 {
+    color: var(--text-dark);
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.page-intro p {
+    color: var(--text-muted);
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 18px;
+}
+
+
+/* ==========================================
+   VIEW EMPLOYEE DETAILS BUTTON
+   ========================================== */
+
+#open-modal {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 12px 22px;
+    min-height: 44px;
+
+    background: linear-gradient(135deg, #c9a227, #e6c766);
+    color: #101828;
+
+    border: 1px solid #a78312;
+    border-radius: 10px;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+    text-decoration: none;
+
+    box-shadow: 0 5px 14px rgba(201, 162, 39, 0.22);
+
+    transition: 0.2s ease;
+}
+
+#open-modal:hover {
+    background: linear-gradient(135deg, #e6c766, #c9a227);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(201, 162, 39, 0.32);
+}/* ==========================================
+   LOADING SKELETON
+   ========================================== */
+
+.skeleton-row {
+    height: 22px;
+    width: 100%;
+    border-radius: 6px;
+    background: linear-gradient(
+        90deg,
+        #eeeeee 25%,
+        #dddddd 50%,
+        #eeeeee 75%
+    );
+    background-size: 200% 100%;
+    animation: skeleton-loading 1.5s infinite;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-position: 200% 0;
     }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+.error-message {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.error-message button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    background: var(--red);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.error-message button:hover {
+    opacity: 0.85;
+}
+}
